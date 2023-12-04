@@ -1,0 +1,8 @@
+#!/bin/sh
+
+temp_dir="$(mktemp --directory --tmpdir "binutils-arm-none-eabi.autopkgtest.$$.XXXXX")"
+trap "cd / ; rm -rf \"$temp_dir\"" EXIT
+
+cp -aR /usr/share/doc/gcc-arm-none-eabi/ ${temp_dir}
+cd ${temp_dir}/gcc-arm-none-eabi/examples/src
+make
