@@ -1,5 +1,173 @@
-template-repository (1.0-1) unstable; urgency=medium
+binutils-arm-none-eabi (21) unstable; urgency=medium
 
-  * Initial release
+  * Use a temporary directory for autopkgtest. Closes: #1021869.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Keith Packard <keithp@keithp.com>  Fri, 11 Aug 2023 07:50:10 -0700
+
+binutils-arm-none-eabi (20) unstable; urgency=medium
+
+  * Convert to source format 3.0. Closes: #1007029.
+
+  * Drop versioned constraint on dejagnu
+
+ -- Keith Packard <keithp@keithp.com>  Fri, 11 Aug 2023 07:43:40 -0700
+
+binutils-arm-none-eabi (19) unstable; urgency=medium
+
+  * Don't try to guess the binutils source tarball directory name.
+    Closes: #1042296.
+
+ -- Keith Packard <keithp@keithp.com>  Fri, 11 Aug 2023 07:31:20 -0700
+
+binutils-arm-none-eabi (18) unstable; urgency=medium
+
+  * Use dpkg-query's source:Upstream-Version instead of cut.
+
+ -- Keith Packard <keithp@keithp.com>  Sun, 23 Oct 2022 16:22:17 -0700
+
+binutils-arm-none-eabi (17) unstable; urgency=medium
+
+  * Make --no-warn-rwx-segments the default.
+
+ -- Keith Packard <keithp@keithp.com>  Wed, 10 Aug 2022 08:50:39 -0700
+
+binutils-arm-none-eabi (16) unstable; urgency=medium
+
+  * Fix source version extraction. Closes: #1013598.
+
+ -- Keith Packard <keithp@keithp.com>  Tue, 09 Aug 2022 12:57:54 -0700
+
+binutils-arm-none-eabi (15) unstable; urgency=medium
+
+  * Enable deterministic archives. Closes: #978494.
+
+  * Add copyright information for packaging. Closes: #981411.
+
+  * Mark binutils-arm-none-eabi Multi-Arch: foreign. Closes: #958226.
+
+ -- Keith Packard <keithp@keithp.com>  Mon, 04 Oct 2021 22:29:52 -0700
+
+binutils-arm-none-eabi (14) unstable; urgency=medium
+
+  * New upstream release
+  * Revert "Extract only first three fields of source version number"
+  * Change salsa-ci filename to standard name
+  * Update salsa-ci yml configuration
+
+ -- Joaquin de Andres <me@xcancerberox.com.ar>  Thu, 05 Mar 2020 11:56:18 +0100
+
+binutils-arm-none-eabi (13) unstable; urgency=medium
+
+  * Create new version just for source upload
+  * No other changes
+
+ -- Keith Packard <keithp@keithp.com>  Wed, 18 Sep 2019 10:25:18 -0700
+
+binutils-arm-none-eabi (12) unstable; urgency=medium
+
+  [ Joaquin de Andres ]
+  * New upstream release
+  * Change maintainer to me and move tin to uploader
+  * Change debian policy version to latest
+  * Change debhelper version to 10. Upstream doesnt support bigger version.
+
+  [ Keith Packard ]
+  * Use only three version fields for source dir name
+    (Closes: #935273)
+  * Disable -Werror compiler flag
+
+ -- Joaquin de Andres <me@xcancerberox.com.ar>  Fri, 06 Sep 2019 12:55:52 -0300
+
+binutils-arm-none-eabi (11) unstable; urgency=medium
+
+  * Remove unnecessary b-d's libisl-0.18-dev and libcloog-isl-dev
+    (Closes: #921850)
+
+ -- Agustin Henze <tin@debian.org>  Mon, 11 Feb 2019 06:15:19 +0000
+
+binutils-arm-none-eabi (10) unstable; urgency=medium
+
+  * Bump debhelper compat to 9
+  * Replace the obsolete priority extra for optional
+  * Use specific version libisl-0.18-dev
+  * Bump Standards-Version to 4.2.0 (No changes needed)
+  * Update Vcs-* fields pointing to salsa
+  * Update package Description
+  * Remove `--with autotools-dev`, it's run by default
+  * Add (autopkg)tests
+
+ -- Agustin Henze <tin@debian.org>  Mon, 13 Aug 2018 10:15:46 +0200
+
+binutils-arm-none-eabi (9) unstable; urgency=medium
+
+  * Rebuild to catch up the last upstream release.
+
+ -- Agustin Henze <tin@debian.org>  Fri, 28 Oct 2016 06:54:22 -0300
+
+binutils-arm-none-eabi (8) unstable; urgency=medium
+
+  * New upstream release
+  * Remove patches (already applied on the new upstream release)
+  * debian/rules
+    - Remove unpack_stamp target
+    - Rename tar_stamp to untar_stamp
+    - Use system's zlib i.e. --with-system-zlib configure flag
+
+ -- Agustin Henze <tin@debian.org>  Wed, 17 Feb 2016 09:28:01 -0300
+
+binutils-arm-none-eabi (7) experimental; urgency=medium
+
+  [ Thomas Preud'homme ]
+  * New upstream release: 4.9-2014-q4-major.
+
+ -- Agustin Henze <tin@debian.org>  Sat, 10 Jan 2015 13:23:01 -0300
+
+binutils-arm-none-eabi (6) experimental; urgency=medium
+
+  [ Thomas Preud'homme ]
+  * New upstream release: 4.8-2014-q3-update.
+  * Add myself to Uploaders.
+
+  [ Agustin Henze ]
+  * Disable testsuite
+  * Bumped Standard-Version to 3.9.6 (no changes required)
+
+ -- Agustin Henze <tin@debian.org>  Mon, 01 Dec 2014 09:38:49 -0300
+
+binutils-arm-none-eabi (5) unstable; urgency=medium
+
+  * New upstream release (2.24.51)
+  * Add built-using field
+  * Add build dependencies libisl-dev and libcloog-isl-dev
+
+ -- Agustin Henze <tin@debian.org>  Fri, 13 Jun 2014 14:21:25 -0300
+
+binutils-arm-none-eabi (4) unstable; urgency=medium
+
+  * Bumped Standard-Version to 3.9.5 (no changes required)
+  * Add myself as Maintainer
+  * Improvements on package Description
+  * Enable interwork support
+  * Add HomePage and Vcs* fields
+  * Fix target installchangelogs
+  * New upstream release (2.24)
+
+ -- Agustin Henze <tin@debian.org>  Fri, 03 Jan 2014 13:48:29 -0300
+
+binutils-arm-none-eabi (3) unstable; urgency=low
+
+  * Move ldscripts to /usr/lib/arm-none-eabi
+
+ -- Keith Packard <keithp@keithp.com>  Tue, 15 Oct 2013 23:43:18 -0700
+
+binutils-arm-none-eabi (2) unstable; urgency=low
+
+  * Fix lintian errors
+
+ -- Keith Packard <keithp@keithp.com>  Tue, 15 Oct 2013 21:25:01 -0700
+
+binutils-arm-none-eabi (1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Keith Packard <keithp@keithp.com>  Sun, 18 Aug 2013 02:49:03 +0200
